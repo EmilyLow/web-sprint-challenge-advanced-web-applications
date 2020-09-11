@@ -14,10 +14,11 @@ const Login = () => {
 
   let login = (e) => {
     e.preventDefault();
-
+    // console.log("Credentials", credentials);
     axios
       .post("http://localhost:5000/api/login", credentials)
       .then((res) => {
+        // console.log("res", res.data.payload);
         localStorage.setItem("token", res.data.payload);
         //Add redirect here
       })
