@@ -23,8 +23,22 @@ const ColorList = ({ colors, updateColors }) => {
     // think about where will you get the id from...
     // where is is saved right now?
     // console.log(colorToEdit);
-    let id = colorToEdit.id;
+    let editId = colorToEdit.id;
     // console.log(id);
+    axiosWithAuth()
+    .put(`/colors/${editId}`, colorToEdit)
+    .then((res) => {
+      console.log(res);
+      //Better way than another get request?
+      axiosWithAuth()
+      .get('/colors')
+      .then((res) => {
+        updateColors(res.data);
+      })
+      .catch((err) => console.log(err))
+     
+    })
+    .catch((err) => console.log(err))
   };
 
   const deleteColor = color => {
