@@ -16,7 +16,7 @@ function BubblePage() {
   useEffect(() => {
     // console.log("Mounted");
 
-    console.log("Fetch colors", fetchColors());
+    // console.log("Fetch colors", fetchColors());
     fetchColors()
       .then((res) => {
         // console.log(res);
