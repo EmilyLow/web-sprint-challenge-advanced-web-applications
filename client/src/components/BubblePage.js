@@ -7,7 +7,7 @@ import Bubbles from "./Bubbles";
 import ColorList from "./ColorList";
 import {fetchColors} from "../api/fetchColors";
 
-const BubblePage = () => {
+function BubblePage() {
   const [colorList, setColorList] = useState([]);
   // fetch your colors data from the server when the component mounts
   //(Does that mean I need to change to a class for ComponentDidMount, or can I just use useEffect? I think I can use)
@@ -16,10 +16,10 @@ const BubblePage = () => {
   useEffect(() => {
     // console.log("Mounted");
 
-    console.log(fetchColors());
+    console.log("Fetch colors", fetchColors());
     fetchColors()
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         setColorList(res.data);
     });
 

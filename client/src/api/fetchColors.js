@@ -2,7 +2,7 @@ import {axiosWithAuth} from "../utils/axiosWithAuth";
 
 export const fetchColors = () => {
     console.log("Fetch colors called");
-    axiosWithAuth()
+   return axiosWithAuth()
     .get("/colors")
     .then( res => {
         console.log("Fetch colors then", res);
