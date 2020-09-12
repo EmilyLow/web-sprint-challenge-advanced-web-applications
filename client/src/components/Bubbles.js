@@ -37,6 +37,8 @@ const Bubbles = ({ colors }) => {
                       cy={y}
                       r={r}
                       fill={colors[i].code.hex}
+                      //Maybe not this
+                     
                     />
                   );
                 }
